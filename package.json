@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "yarn": "^1.5.0"
+  },
+  "scripts": {
+    "start": "babel-node ./examples/first_steps.js"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jamesmacwilliam/ml-tutorials.git"
+  },
+  "author": "jamesmacwilliam",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-class-properties": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0"
+  }
+}
