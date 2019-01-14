@@ -1,14 +1,20 @@
 import tf from '@tensorflow/tfjs'
+import { Series, DataFrame } from 'pandas-js'
+import request from 'request'
+import fs from 'fs'
+import getStream from 'get-stream'
+import parse from 'csv-parse'
 
-let x = () =>
-  console.log('foo')
+let housing_file = "https://download.mlcc.google.com/mledu-datasets/california_housing_train.csv"
+let parser = parse({ delimiter: ',', columns: true })
 
-//Set up a linear classifier.
-//let classifier = tf.estimator.LinearClassifier(feature_columns)
+let housingTests = async () => {
+  let parsed = await getStream.array(request(housing_file).pipe(parser))
+  let df = new DataFrame(parsed)
+  //console.log(df.get('latitude'))
+  //console.log(df.columns)
+  let old = new DataFrame({ old: df.get('housing_median_age').map((val, idx) => val > 20) })
+  console.log(old)
+}
 
-//Train the model on some example data.
-//classifier.train(input_fn=train_input_fn, steps=2000)
-
-//Use it to predict.
-//let predictions = classifier.predict(input_fn=predict_input_fn)
-x()
+housingTests()
