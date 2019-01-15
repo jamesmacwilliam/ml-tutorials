@@ -31,5 +31,16 @@
  ## Intro to Neural Networks
   - WiXi + b (weight * input for each input item + bias term (bias term tweaks for 0 input value))
   - input layer (real values from user), hidden layers (in b/t input -> output) 3 or more hidden == deep, output layer - final estimate
-  -
-
+  - Activation Functions
+    * sigmoid function: f(x) = 1/(1 + e ^(-x)) - output goes from 0 to 1
+    * hyperbolic tangent tanh f(x) = tanh(x) = sinh(x) / cosh(x)  goes from -1 to 1
+    * rectified linear unit (ReLU) max(0, z)    reminder: (z = wx + b)
+  - Cost Functions: (reminder - 'y' is true value, 'a' is predicted value)
+    * sum of (y-a)^2 / n   (quadratic)
+    * cross entropy: C = (-1/n) * sum (y * ln(a) + ((1 - y) * ln(1-a))
+  - Gradient Descent: (finds the minimum of a function - in this case we use it to find minimum of cost function)
+    * gradient == derivative of function at a particular point and determining what direction
+    * backpropagation - used to update the error rate of each neuron
+  - Tensorflow playground (https://playground.tensorflow.org)
+  - Manual Neural Network
+      * see jupyter notebook
