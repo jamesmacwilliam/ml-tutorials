@@ -1,2 +1,4 @@
 */node_modules
 node_modules
+*/course-notes/*.gz
+*/course-notes/*.sqlite3
