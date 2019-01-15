@@ -44,3 +44,5 @@
   - Tensorflow playground (https://playground.tensorflow.org)
   - Manual Neural Network
       * see jupyter notebook
+  - Tensorflow
+    *
