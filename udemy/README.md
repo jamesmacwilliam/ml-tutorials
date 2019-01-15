@@ -45,4 +45,4 @@
   - Manual Neural Network
       * see jupyter notebook
   - Tensorflow
-    *
+    * constants + sessions + actions (see jupyter notes)
