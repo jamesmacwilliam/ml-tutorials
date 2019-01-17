@@ -46,3 +46,11 @@
       * see jupyter notebook
   - Tensorflow
     * constants + sessions + actions (see jupyter notes)
+    * graphs (variables / placeholders)
+      - placeholders are initially empty but must have shape + type of data
+      - graph of wx + b = z w (variable) x (placeholder) -> tf.matmul() -> tf.add(b - variable) -> activation function
+      - then add cost function to train network to optimize see `my neural network` jupyter notebook
+    * estimator api
+      - tf.estimator.DNNClassifier (classification model)
+      - tf.estimator.DNNRegressor (regression model)
+      - to use the estimator, first define feature columns, then create estimator model, create data input function, call train, evaluate, and predict methods on estimator
