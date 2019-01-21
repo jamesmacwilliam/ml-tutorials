@@ -50,7 +50,27 @@
       - placeholders are initially empty but must have shape + type of data
       - graph of wx + b = z w (variable) x (placeholder) -> tf.matmul() -> tf.add(b - variable) -> activation function
       - then add cost function to train network to optimize see `my neural network` jupyter notebook
-    * estimator api
-      - tf.estimator.DNNClassifier (classification model)
-      - tf.estimator.DNNRegressor (regression model)
-      - to use the estimator, first define feature columns, then create estimator model, create data input function, call train, evaluate, and predict methods on estimator
+## Convolusional Neural Networks
+- quick review:
+  * single neuron: wx + b = z
+  * activation functions: perceptrons, sigmoid, tanh, ReLU
+  * network has input + output layers, as well as the hidden layers
+  * to learn: need measurement of error (quadratic + cross entropy)
+  * minimize error with gradient descent
+  * backpropagate gradient descent through layers back to input layer
+- training techniques: dropout (remove neurons randomly to avoid overfitting), expanding data, l1/l2 regularization (penalty for large weights in model)
+- MNIST (0-9 handwritten images of numbers)
+  * first flatten it out to 1 dimensional array
+  * one hot encoding for labels (1 array for each image)
+  * labels end up being a large 2 dimensional array
+  * softmax regression: returns list of values from 0-1 that add up to 1 (list of probabilities)
+  * Tensors make it convenient to feed in sets of images to our models (IHWC)
+  * densley connected layer = every neuron is connected to every other neuron in the next layer
+  * convolusional (mirrors biological) - each neuron is connected to a smaller number of nearby neurons in the next layer
+  * why use convolusional vs DNN? image processing even with basic images has too many pixels, DNN doesn't scale but convolusional does because it is only the nearby neurons of the next layer.
+  * pixels near each other also are more tightly correlated with eachother.
+  * when we get to the edge of the image, there may not be any input, so we can add padding for these.
+  * each filter detects a different feature, tensor has # of filters by # of units H*W (3D)
+  * pooling - create subset of pixels and evaluate the max value, only the max value makes it to the next layer and is representative of the pool.  Even small pooling with a stride of 2 (2x2 pixels) will remove 75% of the input data
+  * dropout - randomly drop units along with their connections to prevent overfitting
+  * see code along in jupyter notebook for CNN network
