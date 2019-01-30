@@ -8,3 +8,7 @@
 - from within the project dir
 - install packages `pipenv install`
 - setup env `pipenv shell`
+
+
+
+* tutorial: https://medium.com/@jinilcs/a-simple-keras-model-on-my-laptop-webcam-dda77521e6a0
