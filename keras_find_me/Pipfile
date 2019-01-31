@@ -12,4 +12,4 @@ tensorflow = {file = "https://storage.googleapis.com/tensorflow/mac/cpu/tensorfl
 keras = "*"
 
 [requires]
-python_version = "3.7.2"
+python_version = "3.6.8"
