@@ -17,4 +17,13 @@
   * `python capture_images.py data/valid/1 200`
   * `python capture_images.py data/train/1 2000`
 
+- run `python train.py`
+
+## Predictions
+
+- run `python predict.py`
+
+## Caveats
+- this is not an object detection network, therefore it will take the whole image from the webcam into account, not just your face.  A more advanced form of neural network will detect you within the picture, so it would not matter what your surroundings are, but we're starting basic first.
+
 * tutorial: https://medium.com/@jinilcs/a-simple-keras-model-on-my-laptop-webcam-dda77521e6a0
